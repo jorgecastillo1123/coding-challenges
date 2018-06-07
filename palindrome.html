@@ -1,0 +1,32 @@
+<!-- Palindrome string is the same in reverse -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input name="textInput" id="textInput" type="text"/>
+    <input name="button" onclick="reverseString(document.getElementById('textInput').value)" type="button" value="Check" />
+    <p id="result"></p>
+</body>
+
+<script>
+    //Using Array functions
+    reverseString = string => {
+        rstring = string.split('').reverse();
+        result = rstring.join('');
+        // result = result == string ? true :false;
+        result = result === string;
+        console.log(result)
+        document.getElementById("result").append(result);
+    }
+
+
+</script>
+
+</html>
