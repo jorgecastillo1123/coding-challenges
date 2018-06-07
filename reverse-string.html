@@ -1,0 +1,47 @@
+<!-- Reverse String -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input name="textInput" id="textInput" type="text"/>
+    <input name="button" onclick="reverseString(document.getElementById('textInput').value)" type="button" value="Check" />
+    <p id="result"></p>
+</body>
+
+<script>
+    //Using Array functions
+    reverseString = string => {
+        string = string.split('').reverse();
+        result = string.join('');
+        console.log(result)
+        document.getElementById("result").append(result);
+    }
+
+    // Using Strings only
+    // reverseString = string => {
+    //    let result = '';
+    //    for(let letter of string){
+    //        result = letter + result;
+    //    }
+    //     console.log(result)
+    //     document.getElementById("result").append(result);
+    // }
+
+    // Using Reduce
+    // reverseString = string => {
+    //     return string.split('').reduce(  (rev,char) => char + rev, ''  );
+    //     console.log(result)
+    //     document.getElementById("result").append(result);
+    // }
+
+
+</script>
+
+</html>

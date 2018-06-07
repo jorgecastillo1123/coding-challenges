@@ -1,0 +1,45 @@
+<!-- Remove Duplicates Case Insensitive -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input name="textInput" id="textInput" type="text"/>
+    <input name="button" onclick="removeDuplicates(document.getElementById('textInput').value)" type="button" value="Check" />
+    <p id="result"></p>
+</body>
+
+<script>
+    removeDuplicates = string => {
+        // check for letters only
+        if(!(/^[a-zA-Z]+$/.test(string))) {
+            console.log('letters only');
+            return;
+        }
+        let aFirst =[];
+        // break string into array
+        string = string.split('');
+        for (let value of string) {
+            // first check on new array
+            if(aFirst.indexOf(value) == -1){
+                // second check on new array on uppercase and lowercase
+                if(aFirst.indexOf(value.toUpperCase()) == -1 && aFirst.indexOf(value.toLowerCase()) == -1){
+                    aFirst.push(value);
+                }   
+            }
+        }
+        // rejoin to form a string
+        aFirst = aFirst.join('');
+        console.log(aFirst)
+        document.getElementById("result").append(aFirst);
+    }
+
+</script>
+
+</html>
